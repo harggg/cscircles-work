@@ -1,0 +1,29 @@
+# Section 8: Remix 
+# Coding Exercise: Ending Time
+
+# This program takes two lines of input. The first line is a "starting time" expressed in a 24-hour clock with leading zeroes, like 08:30 or 14:07. 
+# The second line is a duration D in minutes. Print out what time it will be D minutes after the starting time. For example, for input
+# 12:30
+# 47
+# the correct output would be 13:17. All times should be formatted as numbers between 00:00 and 23:59, but the time period may go over midnight. 
+# For example, on input
+# 23:59
+# 13
+# the correct output is 00:12.
+
+
+
+
+# delete this comment and enter your code here
+time = input()
+add = int(input())
+
+timeh = (int(time[3:5]) + add) //60 +int(time[0:2])
+timem = (int(time[3:5]) + add) % 60
+while timeh >= 24:
+   timeh= timeh-24
+if timeh <=9:
+   timeh = "0"+str(timeh)
+if timem <=9:
+   timem ="0"+str(timem)
+print (str(timeh) + ":" + str(timem))
